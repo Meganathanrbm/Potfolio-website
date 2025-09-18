@@ -31,18 +31,18 @@ const About = () => {
             </h3>
             <h1
               data-aos="fade-right"
-              className="sm:text-4xl text-3xl dark:text-white text-black"
+              className="sm:text-4xl mb-4 text-3xl dark:text-white text-black"
             >
               About Me
             </h1>
             <div className="flex-1 center">
               <div
                 data-aos="fade-up"
-                className="w-[270px] sm:w-[300px] my-4 lg:w-[400px] h-auto rounded-full overflow-hidden border-4 border-slate-500 shadow-md shadow-gray-300"
+                className="md:max-h-[500px] sm:max-h-[400px] max-h-[350px]  max-w-[400px] my-4 rounded-2xl overflow-hidden border-2 border-slate-500 dark:shadow-sm shadow-md shadow-gray-50"
               >
                 <img
-                  src={images.profile01}
-                  className="w-full h-full object-cover object-center"
+                  src={images.profile02}
+                  className="w-full h-full pb-[100px] object-cover object-center"
                   alt="profile picture"
                 />
               </div>
@@ -98,6 +98,17 @@ const About = () => {
               </h3>
               <h4 className="text-gray-500 text-base mt-1">
                 Mar 2024 - Jun 2024
+              </h4>
+            </div>
+            <div data-aos="fade-left" className="before:bg-blue-500 rounded-sm">
+              <h2 className="text-blue-500 m-0 text-xl font-medium">
+                Web Developer
+              </h2>
+              <h3 className="text-lg font-medium text-black">
+                Growfin - Chennai
+              </h3>
+              <h4 className="text-gray-500 text-base mt-1">
+                Sep 2024 - Current
               </h4>
             </div>
           </div>
