@@ -20,7 +20,7 @@ const DarkModeToggle = ({ isDarkMode, setIsDarkMode }) => {
   useEffect(() => {
     const darkMode = localStorage.getItem("darkMode") === "true";
     setIsDarkMode(darkMode);
-  }, []);
+  }, [setIsDarkMode]);
 
   return (
     <div
