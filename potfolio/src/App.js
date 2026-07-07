@@ -1,8 +1,12 @@
 import React from 'react';
 import Nav from './components/Nav';
+import Cursor from './components/Cursor';
+import Preloader from './components/Preloader';
+import ScrollProgress from './components/ScrollProgress';
+import SmoothScroll from './components/SmoothScroll';
 import Home from './sections/Home';
 import About from './sections/About';
-import Skills from './sections/Skills';
+import Profile from './sections/Profile';
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
@@ -10,16 +14,21 @@ import Footer from './sections/Footer';
 
 function App() {
   return (
-    <div className='bg-[#edf2f8] overflow-hidden dark:bg-gray-900'>
+    <div className='bg-paper dark:bg-ink-900'>
+     <div className='grain-overlay'/>
+     <SmoothScroll/>
+     <Preloader/>
+     <Cursor/>
+     <ScrollProgress/>
      <Nav />
      <Home/>
-     <hr className='hr'/>
+     <hr className='divider'/>
      <About/>
-     <hr className='hr'/>
-     <Skills/>
-     <hr className='hr'/>
+     <hr className='divider'/>
+     <Profile/>
+     <hr className='divider'/>
      <Projects/>
-     <hr className='hr'/>
+     <hr className='divider'/>
      <Contact/>
      <Footer/>
     </div>

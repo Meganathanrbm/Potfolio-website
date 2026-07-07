@@ -29,7 +29,7 @@ const DarkModeToggle = ({ isDarkMode, setIsDarkMode }) => {
       tabIndex={0}
       onKeyDown={handleKeyDown}
       onClick={handleClick}
-      className={`cursor-pointer w-11 h-5 bg-blue-500  dark:bg-gray-800 rounded-full relative px-1.5 flex items-center${
+      className={`cursor-pointer w-11 h-5 bg-pine dark:bg-white/10 border border-transparent dark:border-line-dark rounded-full relative px-1.5 flex items-center${
         isDarkMode ? "" : " justify-end"
       }`}
     >

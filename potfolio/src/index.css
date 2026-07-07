@@ -2,149 +2,216 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400&family=Instrument+Serif:ital@0;1&family=Space+Mono:wght@400;700&display=swap");
 
 * {
     padding: 0;
     margin: 0;
-    scroll-behavior: smooth;
     box-sizing: border-box;
-    font-family: 'DM Sans', sans-sarif;
+}
 
+html {
+    font-family: 'Instrument Sans', sans-serif;
+}
+
+body {
+    background-color: #ece7da;
+}
+body.dark-active {
+    background-color: #0c0d0a;
 }
 
 @layer utilities {
     .app {
-        @apply bg-secondary w-screen dark:bg-gray-900 sm:p-16 p-6
+        @apply bg-paper dark:bg-ink-900 w-full
     }
 
-    .padding {
-        @apply sm:p-16 p-6
+    .section {
+        @apply max-w-content mx-auto sm:px-10 px-6 sm:py-24 py-16
     }
 
-    .padding-x {
-        @apply sm:px-16 px-6;
+    .eyebrow {
+        @apply font-mono uppercase tracking-[0.16em] text-xs text-copper dark:text-copper-bright
     }
 
-    .padding-y {
-        @apply sm:py-24 py-6;
-    }
-
-    .center {
-        @apply flex justify-center items-center
+    .section-title {
+        @apply font-display font-medium text-3xl sm:text-4xl text-ink dark:text-paper mt-2
     }
 
     .para {
-        @apply mt-4 text-gray_color dark:text-slate-400 md:text-[19px] text-[18px] leading-[35px] text-justify
+        @apply mt-4 text-slate dark:text-slate-bright text-base leading-[26px] max-w-xl
+    }
+
+    .divider {
+        @apply border-0 border-t border-line dark:border-line-dark m-0
     }
 
     .label {
-        @apply capitalize md:text-[20px] text-[18px] leading-[35px] font-medium text-black dark:text-white
+        @apply font-mono text-xs uppercase tracking-wide text-slate dark:text-slate-bright
     }
 
-    .label_input {
-        @apply capitalize md:text-[18px] text-[16px] leading-[35px] dark:bg-[#EEEEEE]
+    .field-input {
+        @apply w-full bg-transparent border-0 border-b border-line dark:border-line-dark py-2 text-ink dark:text-paper placeholder:text-slate/60 focus:outline-none focus:border-pine dark:focus:border-pine-bright transition-colors
     }
 
-    .h2 {
-        @apply text-4xl md:text-5xl
+    .btn-primary {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-pine dark:bg-pine-bright text-paper dark:text-ink-900 font-medium text-sm px-6 py-3 transition-[box-shadow,opacity] duration-300 hover:opacity-90 hover:shadow-[0_10px_30px_-8px_rgba(30,91,79,0.55)] dark:hover:shadow-[0_10px_30px_-8px_rgba(79,174,147,0.45)]
     }
 
-    .h3 {
-        @apply md:text-3xl text-2xl
-    }
-    .hr{
-        @apply
-        border-[#46364a]
-        dark:border-[#c3c1c1]
-        sm:w-[5%]
-        w-0
-        border-0
-        sm:border-[7px]
-    }
-    .projects_btn{
-        @apply text-white bg-blue-700 hover:bg-blue-800 capitalize focus:ring-4 focus:ring-blue-300 font-medium rounded-md text-base px-5 py-2.5 me-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800
-    }
-    .certificates_btn{
-        @apply text-gray-900 hover:text-white border-[3px] capitalize border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-base px-5 py-2.5 text-center me-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800
-    }
-    .footer_icon {
-        @apply bg-gray-500 p-2  rounded-full m-2 hover:text-white    hover:scale-125 transition duration-200 ease-in
+    .btn-copper {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-copper dark:bg-copper-bright text-paper dark:text-ink-900 font-semibold text-sm px-7 py-3.5 transition-[box-shadow,opacity] duration-300 hover:opacity-90 hover:shadow-[0_10px_30px_-8px_rgba(184,118,59,0.5)] dark:hover:shadow-[0_10px_30px_-8px_rgba(217,154,91,0.4)]
     }
 
+    .btn-pine {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm bg-pine-bright text-ink-900 font-semibold text-sm px-7 py-3.5 transition-[box-shadow,opacity] duration-300 hover:opacity-90 hover:shadow-[0_10px_30px_-8px_rgba(108,195,154,0.5)]
+    }
+
+    .social-chip {
+        @apply inline-flex items-center justify-center rounded-sm border border-line dark:border-line-dark px-6 py-3 font-mono text-xs uppercase tracking-wide text-ink dark:text-paper hover:border-pine dark:hover:border-pine-bright hover:text-pine dark:hover:text-pine-bright transition-colors
+    }
+
+    .btn-outline {
+        @apply inline-flex items-center justify-center gap-2 rounded-sm border border-ink/70 dark:border-paper/60 text-ink dark:text-paper font-medium text-sm px-6 py-3 transition-[box-shadow,color,border-color] duration-300 hover:border-pine hover:text-pine hover:shadow-[0_10px_30px_-8px_rgba(30,91,79,0.25)] dark:hover:border-pine-bright dark:hover:text-pine-bright dark:hover:shadow-[0_10px_30px_-8px_rgba(79,174,147,0.3)]
+    }
+
+    .chip {
+        @apply inline-flex items-center rounded-[3px] border border-line dark:border-line-dark px-3 py-1.5 font-mono text-xs text-ink dark:text-paper transition-colors hover:border-pine hover:text-pine dark:hover:border-pine-bright dark:hover:text-pine-bright
+    }
+
+    .tab-btn {
+        @apply font-mono text-sm uppercase tracking-wide pb-2 border-b-2 border-transparent text-slate transition-colors
+    }
+    .tab-btn.active {
+        @apply text-ink dark:text-paper border-pine dark:border-pine-bright
+    }
+
+    .link-arrow {
+        @apply inline-flex items-center gap-1.5 text-sm font-medium text-ink dark:text-paper hover:text-pine dark:hover:text-pine-bright transition-colors
+    }
+
+    .accent-word {
+        @apply font-serif italic font-normal text-pine dark:text-pine-bright
+    }
 }
 
 /* Navbar */
 .app_nav {
-    width: 100vw;
-    /* height: 7vh; */
-    position: fixed;
-    backdrop-filter: blur(4px);
-    z-index: 10;
-    justify-content: space-between;
-    align-items: center;
-    transition: all .5s ease-in-out;
-}
-hr{
-    margin: 0 auto;
-    border: dotted;
-    background-color: transparent;
-    border-bottom: none;
-}
-
-/* Home */
-.title_text{
-    width: 12ch;
-    text-transform: capitalize;
-    display: block;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 3s steps(10) infinite;
-}
-@keyframes typing {
-    from{
-        width: 0%;
-    }
-    to{
-        width: 12.111ch;
-    }
-}
-
-/* About */
-.timeline-area div{
-    background-color: #ddd;
-    padding: 10px 25px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    line-height: 1.7;
-    position: relative;
-    height: auto;
     width: 100%;
-    margin-bottom: 20px;
-}
-.timeline-area div::before{
-    content: "";
-    display: block;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    border: 3px solid #ddd;
-    position: absolute;
-    top: 10px;
-    left: -41px;
-    
-}
-.timeline-area div::after{
-    content:"";
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-color: transparent #ddd transparent transparent;
-    border-width: 8px;
-    position: absolute;
-    left: -17px;
-    top: 10px;
+    position: fixed;
+    z-index: 20;
+    transition: transform .4s ease-in-out, background-color .3s ease;
 }
 
+/* Timeline */
+.timeline-item {
+    position: relative;
+    padding-left: 28px;
+    padding-bottom: 36px;
+}
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 6px;
+    width: 9px;
+    height: 9px;
+    border-radius: 999px;
+    background-color: #1E5B4F;
+}
+.dark .timeline-item::before {
+    background-color: #4FAE93;
+}
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    left: 4px;
+    top: 18px;
+    bottom: 0;
+    width: 1px;
+    background-color: #DEDBD1;
+}
+.dark .timeline-item::after {
+    background-color: #272B29;
+}
+.timeline-item:last-child::after {
+    display: none;
+}
+
+/* Grain texture overlay */
+.grain-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    pointer-events: none;
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* Custom cursor */
+html.has-cursor,
+html.has-cursor a,
+html.has-cursor button {
+    cursor: none;
+}
+html.has-cursor input,
+html.has-cursor textarea {
+    cursor: text;
+}
+
+/* Marquee */
+.marquee-track {
+    animation: marquee 26s linear infinite;
+}
+@keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .marquee-track {
+        animation: none;
+    }
+}
+
+/* Reveal line wrapper for staggered text animations */
+.reveal-line {
+    overflow: hidden;
+    display: block;
+}
+
+/* Tilt card pointer-follow highlight */
+.tilt-card {
+    position: relative;
+}
+.tilt-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    background: radial-gradient(320px circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(255, 255, 255, 0.16), transparent 60%);
+}
+.tilt-card:hover::after {
+    opacity: 1;
+}
+.dark .tilt-card::after {
+    background: radial-gradient(320px circle at var(--tilt-x, 50%) var(--tilt-y, 50%), rgba(255, 255, 255, 0.07), transparent 60%);
+}
+
+/* Floating badge bob, used by the hero's tech pills */
+.animate-floaty {
+    animation: floaty 5s ease-in-out infinite;
+}
+@keyframes floaty {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .animate-floaty {
+        animation: none;
+    }
+}
