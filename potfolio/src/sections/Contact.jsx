@@ -12,8 +12,8 @@ const EMAILJS_PUBLIC_KEY = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const FALLBACK_LINKS = {
   github: "https://github.com/Meganathanrbm",
-  linkedin: "https://linkedin.com/in/meganathanrbm",
-  twitter: "#",
+  linkedin: "https://linkedin.com/in/meganathanr",
+  leetcode: "https://leetcode.com/u/meganathanr/",
 };
 
 const Contact = () => {
@@ -101,13 +101,13 @@ const Contact = () => {
                 LinkedIn
               </a>
               <a
-                href={socials.twitter || FALLBACK_LINKS.twitter}
+                href={socials.leetcode || FALLBACK_LINKS.leetcode}
                 target="_blank"
                 rel="noreferrer"
-                aria-label="Twitter"
+                aria-label="LeetCode"
                 className="social-chip"
               >
-                Twitter
+                LeetCode
               </a>
             </div>
           </motion.div>
