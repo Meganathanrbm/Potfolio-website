@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
-import { FiArrowRight } from "react-icons/fi";
+import { FiArrowRight } from "../components/Icons";
 import { client } from "../client";
 import RevealText from "../components/RevealText";
 import SectionEyebrow from "../components/SectionEyebrow";

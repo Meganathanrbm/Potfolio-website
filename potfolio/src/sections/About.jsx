@@ -6,7 +6,7 @@ import CountUp from "../components/CountUp";
 
 const SPECS = [
   { label: "Location", value: "Chennai · Bengaluru" },
-  { label: "Focus", value: "Frontend Engineering (React/TypeScript)" },
+  { label: "Focus", value: "Software Engineering (React/TypeScript · Node)" },
   { label: "Education", value: "MCA, Presidency College" },
   { label: "Availability", value: "Actively looking" },
 ];
@@ -44,6 +44,19 @@ const About = () => {
               </span>
               .
             </RevealText>
+
+            <p className="mt-8 font-mono text-xs uppercase tracking-[0.16em] text-slate dark:text-slate-bright">
+              Currently{" "}
+              <a
+                href="https://codolve.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="text-pine dark:text-pine-bright border-b border-pine/40 dark:border-pine-bright/40 hover:border-pine dark:hover:border-pine-bright transition-colors"
+              >
+                Codolve <span aria-hidden="true">&#8599;</span>
+              </a>{" "}
+              &mdash; the studio I co-founded, building client products end to end.
+            </p>
           </motion.div>
 
           <motion.div

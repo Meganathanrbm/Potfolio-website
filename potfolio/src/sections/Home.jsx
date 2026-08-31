@@ -7,7 +7,7 @@ import Marquee from "../components/Marquee";
 import TiltCard from "../components/TiltCard";
 
 const TICKER = [
-  "React","HTML5","CSS3","Javascript", "TypeScript", "Next.js", "GraphQL", "Node.js", "Tailwind CSS", "MongoDB", "Redux",
+  "React", "HTML5", "CSS3", "Javascript", "TypeScript", "Next.js", "GraphQL", "Node.js", "Tailwind CSS", "MongoDB", "Redux", "RAG", "LLMs", "Prompt Engineering", "Claude code"
 ];
 
 const BADGES = [
@@ -17,7 +17,7 @@ const BADGES = [
 ];
 
 const DEFAULT_BIO =
-  "I'm Meganathan R. — a frontend engineer shipping end-to-end products from Chennai / Bengaluru. Sturdy code, quietly delightful UI.";
+  "I'm Meganathan R. — a Software engineer shipping end-to-end products from Chennai / Bengaluru, and co-founder of the studio Codolve. Sturdy code, quietly delightful UI.";
 
 const REVEAL_DELAY = 1.85;
 
@@ -174,7 +174,7 @@ function Home() {
                   Online
                 </div>
                 <div className="absolute bottom-3 left-3 font-mono text-[10px] uppercase tracking-[0.16em] text-white">
-                  Meganathan R. &mdash; FE Engineer
+                  Meganathan R. &mdash; Software Engineer
                 </div>
               </TiltCard>
 
@@ -182,18 +182,16 @@ function Home() {
                 <span
                   key={badge.label}
                   style={{ animationDelay: `${badge.delay}s` }}
-                  className={`hidden sm:inline-flex absolute items-center gap-1.5 font-mono text-xs text-ink dark:text-paper bg-paper dark:bg-panel-dark border border-line dark:border-line-dark rounded-sm px-3 py-2 shadow-lg animate-floaty ${
-                    i === 0
+                  className={`hidden sm:inline-flex absolute items-center gap-1.5 font-mono text-xs text-ink dark:text-paper bg-paper dark:bg-panel-dark border border-line dark:border-line-dark rounded-sm px-3 py-2 shadow-lg animate-floaty ${i === 0
                       ? "-top-4 -right-4"
                       : i === 1
-                      ? "top-1/3 -left-8"
-                      : "-bottom-4 right-6"
-                  }`}
+                        ? "top-1/3 -left-8"
+                        : "-bottom-4 right-6"
+                    }`}
                 >
                   <span
-                    className={`w-1.5 h-1.5 rounded-full ${
-                      i === 1 ? "bg-copper dark:bg-copper-bright" : "bg-pine dark:bg-pine-bright"
-                    }`}
+                    className={`w-1.5 h-1.5 rounded-full ${i === 1 ? "bg-copper dark:bg-copper-bright" : "bg-pine dark:bg-pine-bright"
+                      }`}
                   />
                   {badge.label}
                 </span>

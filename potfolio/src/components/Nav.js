@@ -5,7 +5,7 @@ import { navLinks } from "../Constant";
 import DarkModeToggle from "./DarkModeToggle";
 import Marquee from "./Marquee";
 
-const TICKER = ["Actively looking", "Frontend Engineer", "Chennai / Bengaluru"];
+const TICKER = ["Full-Stack Engineer", "Actively looking", "Software Engineer", "Chennai", "Frontend Engineer", "Bengaluru"];
 
 const Nav = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);

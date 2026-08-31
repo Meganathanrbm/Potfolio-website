@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FiExternalLink, FiGithub } from "react-icons/fi";
+import { FiExternalLink, FiGithub } from "../components/Icons";
 import { client, urlFor } from "../client";
 import RevealText from "../components/RevealText";
 import SectionEyebrow from "../components/SectionEyebrow";

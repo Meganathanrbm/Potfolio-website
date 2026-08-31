@@ -1,6 +1,12 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
 
+let lenisInstance = null;
+
+// Lets other components (e.g. a GSAP ScrollTrigger section) sync to the
+// same virtual scroll instead of spinning up a second, competing Lenis.
+export const getLenis = () => lenisInstance;
+
 const SmoothScroll = () => {
   useEffect(() => {
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -11,6 +17,7 @@ const SmoothScroll = () => {
       easing: (t) => 1 - Math.pow(1 - t, 3),
       smoothWheel: true,
     });
+    lenisInstance = lenis;
 
     let raf;
     const tick = (time) => {
@@ -35,6 +42,7 @@ const SmoothScroll = () => {
       document.removeEventListener("click", handleAnchorClick);
       cancelAnimationFrame(raf);
       lenis.destroy();
+      lenisInstance = null;
     };
   }, []);
 

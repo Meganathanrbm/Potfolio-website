@@ -5,6 +5,12 @@ import SectionEyebrow from "../components/SectionEyebrow";
 
 const TIMELINE = [
   {
+    role: "Full-Stack Engineer · Co-founder",
+    place: "Codolve, Chennai",
+    period: "Nov 2025 — Present",
+    link: "https://codolve.com/",
+  },
+  {
     role: "Software Engineer, Frontend (IC1)",
     place: "Growfin, Chennai",
     period: "Sep 2024 — Jul 2026",
@@ -64,7 +70,25 @@ const Profile = () => {
                   <h3 className="font-display font-semibold text-lg text-ink dark:text-paper">
                     {item.role}
                   </h3>
-                  <p className="text-slate dark:text-slate-bright text-sm mt-1">{item.place}</p>
+                  <p className="text-slate dark:text-slate-bright text-sm mt-1">
+                    {item.link ? (
+                      <a
+                        href={item.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="border-b border-pine/40 dark:border-pine-bright/40 hover:text-pine dark:hover:text-pine-bright hover:border-pine dark:hover:border-pine-bright transition-colors"
+                      >
+                        {item.place} <span aria-hidden="true">&#8599;</span>
+                      </a>
+                    ) : (
+                      item.place
+                    )}
+                  </p>
+                  {item.detail && (
+                    <p className="text-slate dark:text-slate-bright text-sm mt-3 max-w-xl leading-relaxed">
+                      {item.detail}
+                    </p>
+                  )}
                 </div>
               </motion.div>
             ))}
