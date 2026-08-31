@@ -1,0 +1,25 @@
+export default{
+    name:"certificates",
+    title:"Certificates",
+    type:"document",
+    fields:[
+        {
+            name:"name",
+            title:"Title",
+            type:"string"
+        },
+        {
+            name:"imageUrl",
+            title:"ImageUrl",
+            type:"image",
+            options:{
+                hotspot:true
+            }
+        },
+        {
+            name:"link",
+            title:"Link",
+            type:"string"
+        }
+    ]
+}

@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import Nav from './components/Nav';
 import Cursor from './components/Cursor';
 import Preloader from './components/Preloader';
@@ -11,8 +12,10 @@ import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import Footer from './sections/Footer';
 
+// The Studio is a few MB on its own, so it is split out of the landing bundle.
+const StudioPage = lazy(() => import('./studio/StudioPage'));
 
-function App() {
+function Portfolio() {
   return (
     <div className='bg-paper dark:bg-ink-900'>
      <div className='grain-overlay'/>
@@ -32,6 +35,22 @@ function App() {
      <Contact/>
      <Footer/>
     </div>
+  )
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route
+        path='/studio/*'
+        element={
+          <Suspense fallback={<div style={{ padding: '2rem' }}>Loading Studio…</div>}>
+            <StudioPage />
+          </Suspense>
+        }
+      />
+      <Route path='*' element={<Portfolio />} />
+    </Routes>
   )
 }
 
