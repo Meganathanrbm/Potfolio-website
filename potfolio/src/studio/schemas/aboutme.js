@@ -1,4 +1,4 @@
-export default{
+const aboutmeSchema = {
     name:'aboutme',
     title:'AboutMe',
     type:'document',
@@ -23,3 +23,5 @@ export default{
         },
     ]
 }
+
+export default aboutmeSchema;

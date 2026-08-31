@@ -1,4 +1,4 @@
-export default {
+const testimonialsSchema = {
   name: 'testimonials',
   title: 'Testimonials',
   type: 'document',
@@ -63,3 +63,6 @@ export default {
     },
   ],
 }
+
+
+export default testimonialsSchema;

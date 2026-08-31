@@ -1,4 +1,4 @@
-export default{
+const certificatesSchema = {
     name:"certificates",
     title:"Certificates",
     type:"document",
@@ -23,3 +23,5 @@ export default{
         }
     ]
 }
+
+export default certificatesSchema;

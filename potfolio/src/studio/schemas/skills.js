@@ -1,4 +1,4 @@
-export default{
+const skillsSchema = {
     name: 'skills',
     title: 'Skills',
     type: 'document',
@@ -24,3 +24,5 @@ export default{
       },
     ],
 }
+
+export default skillsSchema;
